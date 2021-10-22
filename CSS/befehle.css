@@ -1,0 +1,2 @@
+input[type=email]:invalid {background:red}
+input[type=number]:invalid {background:red}

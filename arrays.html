@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Arrays</title>
+    <meta name="author" content="Taha Al-Bukhaiti">
+    <meta name="robots" content="index, follow"><!-- Meta-Robots sind die Anweisungen für die Suchmaschinenbots Im Wesentlichen geht es darum,
+                                              welche Inhalte über die Suchmaschine gefunden werden dürfen (index) oder nicht (noindex).
+                                              Es handelt sich um ein Anweisung für Suchmaschinenbots die gefunden Links
+                                              auf der Seite untersuchen zu dürfen (follow) oder eben nicht (nofollow).-->
+    <meta name="description" content="Arrays"> <!-- Kurze Beschreibung des Inhalts-->
+    <meta name="keywords" content="Arrays, arrays, array, Reihung, Reihungen"><!-- Schlagworte für eine Website-->
+    <meta name="data" content="2021-10-10T14:08:37+01:00">
+
+    <link rel="shortcut icon" href="./javalogo.png"><!--für ältere Browser (IE 6-9, ...)-->
+    <!-- Ein Favicon ist ein kleines Extra-Feature, das beim Anzeigen der Seite(n)
+    in der Adresszeile des Browsers erscheint und dann im Menü der Favoriten dem Eintrag vorangestellt wird
+    Auf mobilen Seiten werden Favicons für größere Touch-Icons auf dem Startbildschirm oder auf der Startseite des Browsers dargestellt.-->
+    <link rel="icon" type="image/png" href="./javalogo.png" sizes="32x32px">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96">
+    <!-- für mobile Browsers auf iOS Safari, aber auch Android Chrome und andere-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- eine Icon-Kachel für IE auf Windows 8 und 10.-->
+    <link rel="stylesheet" href="/CSS/design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+
+<body class="bodyArrays">
+<div id="kopf">
+    <a>Coding</a>
+</div>
+
+<div id="nav">
+    <a id="farbe1" href="index.html">Home</a>
+    <a id="farbe2" href="">Produkte</a>
+    <a id="farbe3" href="">Komtakte</a>
+    <a id="farbe4" href="">Über uns</a>
+    <a id="farbe5" href="">Impressum</a>
+</div>
+
+<!-- Vorformatierte Text so aussiehend wie ein Code -->
+<div class="arraysCenter">
+
+    <article class="array1">
+        <br>
+        <strong id="strong1">Ausgeben: Gibt die Reihung matrixgerecht am Bildschirm aus!
+        </strong>
+        <pre>
+            <code>
+
+               public void ausgeben(){
+                      for(int k = 0; k < anzZeilen; ++k){
+                           for(int l = 0; l < anzSpalten; ++l){
+                                  System.out.print(matrix[k][l] + "\t");
+                           }
+                           System.out.println("");
+                      }
+              }
+            </code>
+          </pre>
+    </article>
+    <br><br>
+    <!-- Hier ist ein Article-->
+    <article class="array2">
+        <br>
+        <strong id="strong2">
+            Einlesen von float-Werten in eine Reihung und Ausgabevariationen!
+        </strong>
+        <pre>
+              <code>
+
+                import java.util.Scanner;
+            /**
+             * Einlesen von float-Werten in eine Reihung und Ausgabevariationen
+             *
+             */
+
+            public class ReiheEinAus {
+
+                private float[] reell;
+
+                public ReiheEinAus(int laenge) {
+                    // neue Reihung vom Variablentyp float mit der uebergebenen Laenge
+                    // erstellen
+                    reell = new float[laenge];
+                }
+
+                public void einlesen() {
+                    Scanner sc = new Scanner(System.in);
+                    for (int i = 0; i < reell.length; i++) {
+                        System.out.print("Bitte eine Zahl: ");
+                        reell[i] = sc.nextFloat();
+                    }
+                    sc.close();
+                }
+
+                public void ausgeben() {
+                    // 1. Werte der Reihung untereinander ausgeben
+                    for (int i = 0; i < reell.length; i++) {
+                        System.out.println(reell[i]);
+                    }
+                    System.out.println();
+
+                    // Merke die folgende for Schleife seit java 5.0:
+                    // alle Werte des Arrays reell werden der Variable f der Reihe nach
+                    // zugewiesen.
+                    // Sie leistet das gleiche wie die vorige Schleife.
+                    // Nur sinnvoll, wenn kein Zugriff auf Index noetig.
+                    // Insbesondere nicht einsetzbar in der Methode einlesen
+                    for (float f : reell) {
+                        System.out.println(f);
+                    }
+                    System.out.println();
+
+                    // 2. Werte rueckwaerts in einer Zeile ausgeben
+                    for (int i = reell.length - 1; i >= 0; i--) {
+                        System.out.print(reell[i] + "  ");
+                    }
+                    System.out.println();
+
+                    // 3. Werte an geradem Index ausgeben
+                    for (int i = 0; i < reell.length; i += 2) {
+                        System.out.println(reell[i]);
+                    }
+                }
+            }
+            </code>
+          </pre>
+    </article>
+    <br><br>
+
+    <!-- Hier ist ein Article-->
+
+    <article class="array3">
+        <br>
+        <strong id="strong3" style="text-algin" : center;>
+            Dieses Programm demonstriert, wie Zahlen ueber der Tastatur gelesen werden,
+            in ein Array gespeichert werden, und wie das Minimum berechnet und ausgegeben wird.
+        </strong>
+        <pre>
+             <code>
+
+               import java.util.Scanner;
+
+               /**
+                * Dieses Programm demonstriert, wie Zahlen ueber der Tastatur gelesen werden,
+                * in ein Array gespeichert werden, und wie das Minimum berechnet und ausgegeben
+                * wird.
+                *
+                */
+
+               public class Minimum {
+
+                   public static void main(String args[]) {
+                       int anzahl, zaehler, minimum;
+                       Scanner sc = new Scanner(System.in);
+                       System.out.println(
+                           "Programm zur Ermittlung der kleinsten Zahl in einer nicht leeren Zahlenreihe");
+                       System.out
+                           .println("Die ganzen Zahlen werden ueber Tastatur eingelesen.");
+                       System.out.print(
+                           "Bitte Groesse des Feldes eingeben - Groesse muss strikt positiv sein: ");
+
+                       anzahl = sc.nextInt();
+
+                       // Deklarieren und Erzeugen der Reihung
+                       int[] zahlenreihe = new int[anzahl];
+
+                       // Einlesen ganzer Zahlen in die Reihung:
+                       for (zaehler = 0; zaehler < anzahl; zaehler++) {
+                           System.out.print("Zahl " + zaehler + ": ");
+                           zahlenreihe[zaehler] = sc.nextInt();
+                       }
+                       sc.close();
+                       // Annnahme, die erste Zahl sei die kleinste
+                       // erste Zahl hat Index 0!
+                       minimum = zahlenreihe[0];
+                       // Vergleich mit allen Zahlen der Reihung
+                       // Ist eine Zahl kleiner als der Wert in minimum, dann diese
+                       // Zahl in minimum speichern
+                       for (zaehler = 1; zaehler < anzahl; zaehler++)
+                           if (minimum > zahlenreihe[zaehler])
+                               minimum = zahlenreihe[zaehler];
+                       System.out.println("Minimum ist " + minimum);
+                   }
+
+               }
+
+             </code>
+           </pre>
+
+    </article>
+
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer-content">
+
+            <div class="footer-section ueber">
+                <h3 class="logo-text"><span>Java</span>programmierung</h3>
+                <p>
+                    sdafdasd asdasfa sas nfsad aosdsnas sjcnsajd akjsdnasjnas akjsndsaj
+                    sakjdsj sajdnsld sdirewi ajfhf asjbfsaiu jsbdibsi
+                    ijbdf ajhsbdsa ajhsbda aubdaadsbfba jsahbdia akjhsbdias aiashbiasb
+                </p>
+                <div class="kontakt">
+                    <span><i class="fas fa-phone"></i> &nbsp; 0049-889-223-223</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; infojp@gmail.de</span>
+                </div>
+                <div class="social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-snapchat"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+
+            </div>
+            <div class="footer-section links">
+                <h4>Klick Links</h4>
+                <ul>
+                    <a href="html.index" target="_blank">
+                        <li>NEWSLETTER</li>
+                    </a>
+                    <a href="#" target="_blank">
+                        <li>EVANTS</li>
+                    </a>
+                    <a href="#" target="_blank">
+                        <li>TEAM</li>
+                    </a>
+                    <a href="#" target="_blank">
+                        <li>GALLERY</li>
+                    </a>
+                    <a href="#" target="_blank">
+                        <li>TERMS AND CONDITION</li>
+                    </a>
+                    <a href="#" target="_blank">
+                        <li>DATENSCHUTZ</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-from">
+                <h5>Kontaktiere uns</h5>
+
+                <form class="" action="mailto:tahaalbukhaiti@gmail.com" method="post">
+                    <input type="email" name="email" class="text-input contact-input"
+                           placeholder="Deine Email Address..">
+                    <textarea name="mess" class="text-input contact-input" placeholder="Dein Nachricht..."></textarea>
+
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Senden
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; javaprogrammierung.de | Willkomen
+        </div>
+    </div>
+</div>
+<!-- footer ENDE-->
+</body>
+
+</html>
