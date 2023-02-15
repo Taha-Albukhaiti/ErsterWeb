@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="button1Name" id="clone_name" placeholder="Nachname, Vorname">
+<a href="#" id="eintragen">Eintragen</a>
+<div draggable="true" id="clone" class="vorlage">Max und Moritz - Erster Streich</div>
+<script>
+	document.getElementById('eintragen').addEventListener('click',function(){
+		Inva = document.getElementById("clone_name");
+		if(Inva.value.length>=3){
+			document.getElementById('clone').innerHTML=Inva.value;
+		}else{
+			document.getElementById('clone').innerHTML='Dein Text ist zu kurz';
+		}
+	});
+</script>
+
+</body>
+</html>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/CSS/design.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
+
 </head>
 
 <body class="bodyIndex">
@@ -44,7 +45,7 @@
         <center class="zweiArticle">
             <article class="comment-1">
                 <div class="h1">
-                    <h1 id="h1div">Java Programmierung</h1>
+                    <h1 id="h1div" onclick="outrekursivFakul(5)">Java Programmierung</h1>
                 </div>
                 <p>
                 <blockquote cite="https://de.wikipedia.org/wiki/Java_(Programmiersprache)">
@@ -63,9 +64,10 @@
                     Kotlin und Scala kompiliert werden kann. <br>
                     Im Prinzip könnte jede Programmiersprache als Grundlage für Java-Bytecode genutzt werden, meistens
                     existieren aber keine entsprechenden Bytecode-Compiler.
-                    <a href="https://de.wikipedia.org/wiki/Java_(Programmiersprache)"
-                       target="_blank">Quelle-wikipedia</a>
-                    </p>
+                </blockquote>
+                <a href="https://de.wikipedia.org/wiki/Java_(Programmiersprache)"
+                   target="_blank">Quelle-wikipedia</a>
+                </p>
             </article>
             <!--
             <div id="bild2">
@@ -79,7 +81,7 @@
             <!-- in css Listeunterstrich entfernen: text-decoration: none; -->
             <article class="co">
                 <div class="h2">
-                    <h2 id="h2div" ; style="text-align: center" ;>Kategorie</h2>
+                    <h2 id="h2div"; style="text-align: center"; onclick="ueberschrifft()">Kategorie</h2>
                 </div>
                 <ul>
                     <!-- style="list-style: square; color:#000000;""-->
@@ -121,9 +123,9 @@
                         <legend>Personal Informationen</legend>
                         <br><br>
                         <label for="anrede">Anrede:* Frau </label>
-                        <input type="radio" id="anrede" name="anrede" accesskey="a" required>
+                        <input type="radio" class="anrede" name="anrede" accesskey="a" required>
                         <label for="anrede">Herr</label>
-                        <input type="radio" id="anrede" name="anrede" required>
+                        <input type="radio" class="anrede" name="anrede" required>
                         <br><br>
                         <label for="name">Name:*</label>
                         <input type="text" id="name" name="name" size="30" maxlength="30" placeholder="Name" required>
@@ -203,12 +205,11 @@
     <br>
     <!-- Eingabe zum Autor -->
     <section>
-        <details color:>
-        "white"; >
-        <summary>Autor: Taha Al-Bukhaiti</summary>
-        <p>Medieninformatikstudent, Coding <br>
-            Java, HTML, CSS und JavaScript.</p>
-        <a href="mailto:Email-Adresse">tahaalbukhaiti@gmail.com</a>
+        <details color : white;>
+            <summary>Autor: Taha Al-Bukhaiti</summary>
+            <p>Medieninformatikstudent, Coding <br>
+                Java, HTML, CSS und JavaScript.</p>
+            <a href="mailto:Email-Adresse">tahaalbukhaiti@gmail.com</a>
         </details>
     </section>
     <br><br>
@@ -241,6 +242,7 @@
         </div>
         <div class="footer-section links">
             <h4>Klick Links</h4>
+
             <ul>
                 <a href="html.index" target="_blank">
                     <li>NEWSLETTER</li>
@@ -264,6 +266,7 @@
         </div>
 
         <div class="footer-section contact-from">
+
             <h5>Kontaktiere uns</h5>
 
             <form class="" action="mailto:tahaalbukhaiti@gmail.com" method="post">
@@ -283,6 +286,16 @@
     </div>
 </div>
 <!-- footer ENDE-->
+
+<script src="js/mainJS.js">
+  /*  var m = 4;
+    var w = "Das Ergebnis von Fakultät " + m + " = " + rekursivFakul(m);
+    window.alert(w);
+
+   */
+
+</script>
+<script src="js/javascript.js"></script>
 </body>
 
 
